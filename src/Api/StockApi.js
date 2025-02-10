@@ -1,0 +1,26 @@
+const StockApi = [
+    { id: 1, name: "8GB RAM DDR4", price: 1500, stock: 10 },
+    { id: 2, name: "16GB RAM DDR4", price: 2800, stock: 8 },
+    { id: 3, name: "32GB RAM DDR4", price: 5200, stock: 6 },
+    { id: 4, name: "256GB SSD NVMe", price: 3200, stock: 5 },
+    { id: 5, name: "512GB SSD NVMe", price: 5500, stock: 7 },
+    { id: 6, name: "1TB SSD NVMe", price: 9500, stock: 3 },
+    { id: 7, name: "1TB HDD", price: 3000, stock: 12 },
+    { id: 8, name: "2TB HDD", price: 5200, stock: 9 },
+    { id: 9, name: "NVIDIA GTX 1660", price: 18000, stock: 4 },
+    { id: 10, name: "NVIDIA RTX 3060", price: 34000, stock: 2 },
+    { id: 11, name: "NVIDIA RTX 3070", price: 49000, stock: 3 },
+    { id: 12, name: "Intel i5 10th Gen Processor", price: 15000, stock: 6 },
+    { id: 13, name: "Intel i7 11th Gen Processor", price: 28000, stock: 5 },
+    { id: 14, name: "AMD Ryzen 5 5600X", price: 22000, stock: 30 },
+    { id: 15, name: "AMD Ryzen 7 5800X", price: 32000, stock: 90 },
+    { id: 16, name: "Gaming Keyboard RGB", price: 2500, stock: 15 },
+    { id: 17, name: "Gaming Mouse 12000 DPI", price: 1800, stock: 20 },
+    { id: 18, name: "Mechanical Keyboard", price: 4000, stock: 1 },
+    { id: 19, name: "Wireless Gaming Mouse", price: 2500, stock: 12 },
+    { id: 20, name: "Gaming Headset 7.1 Surround", price: 6000, stock: 8 },
+    { id: 21, name: "24-inch 144Hz Monitor", price: 16000, stock: 4 },
+    { id: 22, name: "24-inch 144Hz Monitor", price: 20000, stock: 5 },
+  ];
+
+  export default StockApi;
