@@ -6,7 +6,10 @@ import Lessitems from "../AllItems/Lessitems";
 import CreateItem from "../AllItems/CreateItem";
 const HomeScreen = () => {
   const [index, setIndex] = useState(0);
-
+  const [stockData, setStockData] = useState(StockApi);
+  const addNewItem = (newItem) => {
+    setStockData((prevStock) => [...prevStock, { ...newItem, id: prevStock.length + 1 }]);
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.title}>DeshBoard</Text>
@@ -27,7 +30,7 @@ const HomeScreen = () => {
             { backgroundColor: index === 1 ? "#DD88CF" : "#5C7285", transform: [{ scale: pressed ? 0.95 : 1 }] }
           ]}
         >
-          <Text style={styles.btn1text}>Less Items</Text>
+          <Text style={styles.btn1text}>list Items</Text>
         </Pressable>
         <Pressable
           onPress={() => setIndex(2)}
@@ -40,9 +43,9 @@ const HomeScreen = () => {
         </Pressable>
       </View>
       <View style={styles.minContainer}>
-        {index === 0 && <Allitems data={StockApi} />}
-        {index === 1 && <Lessitems data={StockApi} />}
-        {index === 2 && <CreateItem />}
+        {index === 0 && <Allitems data={stockData} />}
+        {index === 1 && <Lessitems data={stockData} />}
+        {index === 2 && <CreateItem addNewItem={addNewItem}/>}
       </View>
     </View>
   );
