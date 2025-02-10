@@ -1,6 +1,6 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import React from "react";
-
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 const Lessitems = (props) => {
   return (
     <View style={styles.itemContainer}>
@@ -28,7 +28,10 @@ const Lessitems = (props) => {
                 { backgroundColor: item.stock <= 7 && "#FFA09B" },
               ]}
             >
-              <Text>{item.name}</Text>
+              <Text>
+                <FontAwesome name="arrow-up" size={18}  color={ item.stock <= 7 && '#B82132'} />
+                {item.name}
+                </Text>
               <Text>{item.price} ₹</Text>
               <Text>Stock: {item.stock}</Text>
             </View>
