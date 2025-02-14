@@ -21,6 +21,7 @@ const StockApi = [
     { id: 20, name: "Gaming Headset 7.1 Surround", price: 6000, stock: 8 },
     { id: 21, name: "24-inch 144Hz Monitor", price: 16000, stock: 4 },
     { id: 22, name: "24-inch 144Hz Monitor", price: 20000, stock: 5 },
+    { id: 23, name: "dell", price: 200, stock: 5 },
   ];
 
   export default StockApi;

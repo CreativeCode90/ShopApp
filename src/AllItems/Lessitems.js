@@ -61,8 +61,9 @@ const Lessitems = ({ data }) => {
             <Text>
               <FontAwesome
                 name={item.stock > 7 ? "arrow-up" : "arrow-down"}
-                size={18}
+                size={15}
                 color={item.stock > 7 ? "#347928" : "#B82132"}
+
               />
               {` ${item.name}`}
             </Text>
@@ -122,7 +123,7 @@ const styles = StyleSheet.create({
   wrapperContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    gap: 10,
+    gap: 4,
     backgroundColor: "white",
     padding: 7,
     borderRadius: 5,

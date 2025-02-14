@@ -16,7 +16,7 @@ const Allitems = (props) => {
         renderItem={({ item }) => ( // Correct destructuring
           <View style={[styles.wrapperContainer , {backgroundColor : item.stock >= 7 ? "#AEEA94" : '#FFA09B'}]}  >
             <Text>
-            <FontAwesome name="arrow-up" size={18}  color={ item.stock >= 7 ? '#347928' : '#B82132'} />
+            <FontAwesome name="arrow-up" size={15}  color={ item.stock >= 7 ? '#347928' : '#B82132'} />
               {item.name}
               </Text>
             <Text>{item.price} ₹</Text>
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   wrapperContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    gap: 10,
+    gap: 5,
     backgroundColor: "white",
     padding: 7,
     borderRadius: 5,
