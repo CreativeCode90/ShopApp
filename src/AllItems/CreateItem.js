@@ -7,6 +7,7 @@ import {
   View,
   Alert,
 } from "react-native";
+import Color from "../contants/Color";
 
 const CreateItem = ({ addNewItem }) => {
   const [name, setName] = useState("");
@@ -81,7 +82,7 @@ const styles = StyleSheet.create({
   },
   input: {
     fontSize: 17,
-    backgroundColor: "#EFE3C2",
+    backgroundColor: Color.white,
     padding: 10,
     borderRadius: 5,
     marginBottom: 8,
@@ -91,7 +92,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   button: {
-    backgroundColor: "#123524",
+    backgroundColor: Color.lightblue,
     padding: 12,
     borderRadius: 5,
     alignItems: "center",
