@@ -7,11 +7,12 @@ import {
   TextInput,
 } from "react-native";
 import React, { useState } from "react";
-import StockApi from "../Api/StockApi"; 
+import StockApi from "../Api/StockApi";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
+import Color from "../contants/Color";
 const SearchScreen = () => {
   const [productname, setProductname] = useState("");
-  const [filteredData, setFilteredData] = useState([]); 
+  const [filteredData, setFilteredData] = useState([]);
 
   const SearchData = () => {
     const results = StockApi.filter((item) =>
@@ -37,34 +38,34 @@ const SearchScreen = () => {
       </View>
 
       {/* Display Search Results */}
-     <View style={{marginTop : '5%'}} >
-     <FlatList
-        data={filteredData}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => (
-          <View
-            style={[
-              styles.wrapperContainer,
-              { backgroundColor: item.stock >= 7 ? "#AEEA94" : "#FFA09B" },
-            ]}
-          >
-            <Text>
-              <FontAwesome
-                name="arrow-up"
-                size={15}
-                color={item.stock >= 7 ? "#347928" : "#B82132"}
-              />
-              {item.name}
-            </Text>
-            <Text>{item.price} ₹</Text>
-            <Text>Stock: {item.stock}</Text>
-          </View>
-        )}
-        ListEmptyComponent={
-          <Text style={styles.noResult}>No products found</Text>
-        }
-      />
-     </View>
+      <View style={{ marginTop: "5%" }}>
+        <FlatList
+          data={filteredData}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }) => (
+            <View
+              style={[
+                styles.wrapperContainer,
+                { backgroundColor: item.stock >= 7 ? Color.lightGreen : Color.lightRed },
+              ]}
+            >
+              <Text>
+                <FontAwesome
+                  name="arrow-up"
+                  size={15}
+                  color={item.stock >= 7 ? Color.darkGreen : Color.darkRed}
+                />
+                {item.name}
+              </Text>
+              <Text>{item.price} ₹</Text>
+              <Text>Stock: {item.stock}</Text>
+            </View>
+          )}
+          ListEmptyComponent={
+            <Text style={styles.noResult}>No products found</Text>
+          }
+        />
+      </View>
     </View>
   );
 };
@@ -73,7 +74,7 @@ export default SearchScreen;
 
 const styles = StyleSheet.create({
   searchContainer: {
-    backgroundColor: "#F5EFFF",
+    backgroundColor: Color.lightpurple,
     flex: 1,
     padding: "5%",
     paddingTop: "12%",
@@ -86,13 +87,13 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   searchinput: {
-    backgroundColor: "white",
+    backgroundColor: Color.white,
     padding: 10,
     width: "80%",
     borderRadius: 5,
   },
   searchbtn: {
-    backgroundColor: "#DAD2FF",
+    backgroundColor: Color.darkblue,
     padding: 10,
   },
   productItem: {
@@ -125,5 +126,4 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
   },
-
 });

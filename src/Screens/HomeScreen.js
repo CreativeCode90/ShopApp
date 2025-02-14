@@ -5,6 +5,7 @@ import StockApi from "../Api/StockApi";
 import Lessitems from "../AllItems/Lessitems";
 import CreateItem from "../AllItems/CreateItem";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
+import Color from "../contants/Color";
 const HomeScreen = (props) => {
   const [index, setIndex] = useState(0);
   const [stockData, setStockData] = useState(StockApi);
@@ -19,7 +20,11 @@ const HomeScreen = (props) => {
       <View style={styles.header}>
         <Text style={styles.title}>DeshBoard</Text>
         <View style={styles.menubar}>
-          <FontAwesome name="search" size={20} onPress={()=>props.navigation.navigate('Search')} />
+          <FontAwesome
+            name="search"
+            size={20}
+            onPress={() => props.navigation.navigate("Search")}
+          />
         </View>
       </View>
       <View style={styles.btnContainer}>
@@ -28,7 +33,7 @@ const HomeScreen = (props) => {
           style={({ pressed }) => [
             styles.btn1,
             {
-              backgroundColor: index === 0 ? "#DD88CF" : "#5C7285",
+              backgroundColor: index === 0 ? Color.lightblue : Color.gray,
               transform: [{ scale: pressed ? 0.95 : 1 }],
             },
           ]}
@@ -40,7 +45,7 @@ const HomeScreen = (props) => {
           style={({ pressed }) => [
             styles.btn1,
             {
-              backgroundColor: index === 1 ? "#DD88CF" : "#5C7285",
+              backgroundColor: index === 1 ? Color.lightblue : Color.gray,
               transform: [{ scale: pressed ? 0.95 : 1 }],
             },
           ]}
@@ -52,7 +57,7 @@ const HomeScreen = (props) => {
           style={({ pressed }) => [
             styles.btn1,
             {
-              backgroundColor: index === 2 ? "#DD88CF" : "#5C7285",
+              backgroundColor: index === 2 ? Color.lightblue : Color.gray,
               transform: [{ scale: pressed ? 0.95 : 1 }],
             },
           ]}
@@ -75,7 +80,7 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     height: "100%",
-    backgroundColor: "#ffffff",
+    backgroundColor: Color.lightpurple,
     padding: "5%",
     paddingTop: "10%",
   },
@@ -104,15 +109,15 @@ const styles = StyleSheet.create({
     marginTop: "10%",
     height: "80%",
   },
-  header : {
-    flexDirection : 'row',
-    alignItems :'center',
-    justifyContent : 'space-between'
-  },  
-  menubar  : {
-    flexDirection : 'row',
-    alignItems :'center',
-    justifyContent : 'center',
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  menubar: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
     gap: 5,
-  }
+  },
 });

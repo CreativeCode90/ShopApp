@@ -1,7 +1,7 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import React, { useState } from "react";
-
+import Color from "../contants/Color";
 const Lessitems = ({ data }) => {
   const [selectedStock, setSelectedStock] = useState("Up Stock");
   const [extended, setExtended] = useState(false);
@@ -55,14 +55,14 @@ const Lessitems = ({ data }) => {
           <View
             style={[
               styles.wrapperContainer,
-              { backgroundColor: item.stock <= 7 ? "#FFA09B" : "#AEEA94" },
+              { backgroundColor: item.stock <= 7 ? Color.lightRed : Color.lightGreen },
             ]}
           >
             <Text>
               <FontAwesome
                 name={item.stock > 7 ? "arrow-up" : "arrow-down"}
                 size={15}
-                color={item.stock > 7 ? "#347928" : "#B82132"}
+                color={item.stock > 7 ? Color.darkGreen : Color.darkRed}
 
               />
               {` ${item.name}`}
